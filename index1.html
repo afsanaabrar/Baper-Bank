@@ -10,8 +10,8 @@
 <body>
  <h1 class="text-center text-5xl mt-20">Welcome to my<span class="text-indigo-700 ">Account</span></h1>
   <main class="max-w-screen-xl mx-auto">
-    <section class=" w-[850px] bg-blue-100 mx-auto mt-14 py-[100px]">
-        <div class="grid grid-cols-3 bg-red-700 w-[600px] mx-auto gap-5">
+    <section class=" lg:w-[850px] bg-blue-100 mx-auto mt-14 py-[100px]">
+        <div class="grid justify-center lg:grid-cols-3  lg:w-[600px] mx-auto gap-5">
             <div class="bg-indigo-500 w-[150px] text-white px-[10px]">
                 <h1 class="text-2xl">Deposit</h1>
                 <h2 class="text-2xl">$ <span id="deposit-total">00</span></h2>
@@ -26,13 +26,13 @@
             </div>
         </div>
 
-        <div class="flex flex-row justify-evenly">
-            <div class="bg-pink-500 w-[300px] mt-14 p-5">
+        <div class="grid grid-cols-1 justify-center">
+            <div class="bg-pink-500 w-[300px] mt-14 p-5 ml-16 md:ml-56">
                 <h1 class="text-2xl text-white mb-3">Please Deposit</h1>
                <input type="text" id="deposit-field" class="rounded-md mb-3"><br>
                <button id="btn-deposit" class="bg-rose-700 text-white py-1 px-4 rounded-md">submit</button>
             </div>
-            <div class="bg-rose-500 w-[300px]  mt-14 p-5">
+            <div class="bg-rose-500 w-[300px]  mt-14 p-5 ml-16 md:ml-56">
                 <h1 class='text-2xl text-white mb-3'>Please Withdraw</h1>
                <input type="text" id="withdraw-field" class="rounded-md mb-3"><br>
                <button id="btn-withdraw" class="bg-pink-900 text-white py-1 px-4 rounded-md">Withdra</button>
