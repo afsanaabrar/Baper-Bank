@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+ <h1 class="text-center text-5xl mt-20">Welcome to my<span class="text-indigo-700 ">Account</span></h1>
+  <main class="max-w-screen-xl mx-auto">
+    <section class=" w-[850px] bg-blue-100 mx-auto mt-14 py-[100px]">
+        <div class="grid grid-cols-3 bg-red-700 w-[600px] mx-auto gap-5">
+            <div class="bg-indigo-500 w-[150px] text-white px-[10px]">
+                <h1 class="text-2xl">Deposit</h1>
+                <h2 class="text-2xl">$ <span id="deposit-total">00</span></h2>
+            </div>
+            <div class="bg-purple-500 w-[150px] text-white px-[10px]">
+                <h1 class="text-2xl">Withdra</h1>
+                <h2 class="text-2xl">$ <span id="withdraw-total">00</span></h2>
+            </div>
+            <div class="bg-fuchsia-500  w-[150px] text-white px-[10px]">
+                <h1 class="text-2xl">Balance</h1>
+                <h2 class="text-2xl">$ <span id="balance-total">50</span></h2>
+            </div>
+        </div>
+
+        <div class="flex flex-row justify-evenly">
+            <div class="bg-pink-500 w-[300px] mt-14 p-5">
+                <h1 class="text-2xl text-white mb-3">Please Deposit</h1>
+               <input type="text" id="deposit-field" class="rounded-md mb-3"><br>
+               <button id="btn-deposit" class="bg-rose-700 text-white py-1 px-4 rounded-md">submit</button>
+            </div>
+            <div class="bg-rose-500 w-[300px]  mt-14 p-5">
+                <h1 class='text-2xl text-white mb-3'>Please Withdraw</h1>
+               <input type="text" id="withdraw-field" class="rounded-md mb-3"><br>
+               <button id="btn-withdraw" class="bg-pink-900 text-white py-1 px-4 rounded-md">Withdra</button>
+            </div>
+        
+        </div>
+       </section>
+    
+    
+    
+    
+    
+
+  </main>
+
+
+
+
+    <script>
+        document.getElementById('btn-deposit').addEventListener('click',function(){
+          let depositField=document.getElementById('deposit-field');
+        //   input for deposit
+          let newDepositAmount=parseFloat(depositField.value );
+        //   per deposit show in depo text box
+          let depositTotalElement=document.getElementById('deposit-total');
+          let previousDepositTotal=parseFloat(depositTotalElement.innerText);
+        //   total input deposit calculation and display in deposit box
+          let currentDepositTotal=previousDepositTotal+newDepositAmount;
+          depositTotalElement.innerText=currentDepositTotal;
+         depositField.value=''
+        // total Balance pluse korar kaj
+        const balanceTotalElement=document.getElementById('balance-total');
+         const previousBalance=parseFloat(balanceTotalElement.innerText)
+         const currentBalanceTotal =previousBalance+newDepositAmount;
+        //  pluse kore total amount balance e show kora
+         balanceTotalElement.innerText=currentBalanceTotal
+        })
+
+
+        // withdrow section start
+      document.getElementById('btn-withdraw').addEventListener('click',function(){
+        // withdrow amount input
+        const withField=document.getElementById('withdraw-field')
+       const currentWithField=parseFloat(withField.value)
+       
+        // per withdrow amoun pluse result show in withrow text box
+        const withdrawText=document.getElementById('withdraw-total');
+        const currentText=parseFloat(withdrawText.innerText)
+        // per withdrow input adding section
+       const totalWdrText=currentText+ currentWithField;
+    //    total main result show in withdrow text box
+        withdrawText.innerText=totalWdrText
+      
+        withField.value=''
+    
+     //  withdrow amount show from main balance
+     const totalBalance=document.getElementById('balance-total');
+     const preTotalBalance=parseFloat(totalBalance.innerText)
+
+     const newTotalBalance=preTotalBalance-currentWithField
+     totalBalance.innerText=newTotalBalance
+     })
+      
+        
+    </script>
+</body>
+</html>
